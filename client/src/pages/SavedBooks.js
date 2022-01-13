@@ -50,6 +50,9 @@ const userData = data?.me || {}
     }
 
     try {
+      const { data } = removeBook({
+        variables: {bookId}
+      })
       // const response = await deleteBook(bookId, token);
 
       // if (!response.ok) {
