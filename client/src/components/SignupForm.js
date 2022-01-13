@@ -4,7 +4,7 @@ import { useMutation} from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 
 
-import { createUser } from '../utils/API';
+// import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
@@ -39,7 +39,7 @@ const SignupForm = () => {
       const { data } = await createUser({
         variables: userFormData
       })
-      Auth.login(token);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
